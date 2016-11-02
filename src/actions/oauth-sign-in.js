@@ -81,6 +81,7 @@ export function oAuthSignIn({provider, params, endpointKey}) {
 
     let url = getOAuthUrl({provider, params, currentEndpointKey});
 
+    debugger
     return authenticate({endpointKey, provider, url})
       .then(user => dispatch(oAuthSignInComplete(user, currentEndpointKey)))
       .catch(({ errors }) => {
